@@ -69,7 +69,6 @@ function load_track(index_no) {
   artist.innerHTML = All_song[index_no].singer;
   present.innerHTML = index_no + 1;
   track.load();
-
 }
 
 load_track(index_no);
@@ -99,6 +98,7 @@ function pausesong() {
 
 // next song
 function next_song() {
+  slider.value = 0;
   if (index_no < All_song.length - 1) {
     index_no += 1;
     load_track(index_no);
@@ -112,6 +112,7 @@ function next_song() {
 
 // function previous song
 function previous_song() {
+  slider.value = 0;
   if (index_no > 0) {
     index_no -= 1;
     load_track(index_no);
@@ -156,10 +157,10 @@ function range_slider() {
 }
 
 function autoplay_switch() {
-  if(autoplay == 1){
+  if (autoplay == 1) {
     autoplay = 0;
     auto_play.style.background = "rgba(255,255,255,0.2)";
-  }else{
+  } else {
     autoplay = 1;
     auto_play.style.background = "#FF8A65";
   }
@@ -174,5 +175,4 @@ function mute_sound() {
   } else {
     volume_icon.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
   }
-
 }
