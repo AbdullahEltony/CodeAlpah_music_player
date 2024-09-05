@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <!-- logo -->
+      <p id="logo"><i class="fa-solid fa-music"></i>Music</p>
+
+      <!-- left part -->
+      <div class="left">
+        <img id="track_image" src="" alt="" />
+        <div class="volume">
+          <p id="volume_show">90</p>
+          <span id="volume_icon" onclick="mute_sound()">
+            <i
+              class="fa-solid fa-volume-high"
+            ></i>
+          </span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="90"
+            onchange="volume_change()"
+            id="volume"
+          />
+        </div>
+      </div>
+
+      <!-- right part -->
+      <div class="right">
+        <div class="show_song_no">
+          <p id="present">1</p>
+          <p>/</p>
+          <p id="total">5</p>
+        </div>
+        <!-- song title -->
+        <p id="title">title.mp3</p>
+        <p id="artist">Artist Name</p>
+
+        <!-- middle part -->
+        <div class="middle">
+          <button onclick="previous_song()" id="prev">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button onclick="justplay()" id="play">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button onclick="next_song()" id="next">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+        </div>
+        <!-- duration part -->
+        <div class="duration">
+          <input
+            type="range"
+            id="duration_slider"
+            min="0"
+            max="100"
+            value="0"
+            onchange="change_duration()"
+          />
+        </div>
+        <button id="autoplay" onclick="autoplay_switch()">
+          Auto play
+          <i class="fa-solid fa-circle-notch"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
